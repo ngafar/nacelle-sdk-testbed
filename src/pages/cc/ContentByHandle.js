@@ -1,31 +1,38 @@
 import { useState } from "react";
-import Storefront from "@nacelle/storefront-sdk";
+import NacelleClient from "@nacelle/client-js-sdk";
+import createCompatibilityConnector from "@nacelle/compatibility-connector";
 
-function ContentByHandleV2SDK() {
-    const [spaceId, setSpaceId] = useState("");
-    const [token, setToken] = useState("");
-    const [handle, setHandle] = useState("");
-    const [nacelleEntryId, setNacelleEntryId] = useState("");
-    const [jsonResponse, setJsonResponse] = useState({
-      msg: "waiting on credentials",
+function ContentByHandle() {
+  const [spaceId, setSpaceId] = useState("");
+  const [token, setToken] = useState("");
+  const [handle, setHandle] = useState("");
+  const [nacelleEntryId, setNacelleEntryId] = useState("");
+  const [jsonResponse, setJsonResponse] = useState({
+    msg: "waiting on credentials",
+  });
+
+  async function getContent() {
+    const compatibilityConnector = new createCompatibilityConnector({
+      endpoint: `https://storefront.api.nacelle.com/graphql/v1/spaces/${spaceId}`,
+      token: token,
+      locale: "en-US",
     });
-  
-    async function getContent() {
-      const client = Storefront({
-        storefrontEndpoint: `https://storefront.api.nacelle.com/graphql/v1/spaces/${spaceId}`,
-        token: token,
-      });
-  
-      const content = await client.content({
-        handles: [handle],
-      });
-      
-      setJsonResponse(content[0]);
-    }
-  
-    return (
+
+    const client = new NacelleClient({
+      connector: compatibilityConnector,
+    });
+
+    const content = await client.data.content({
+      handle: handle,
+    });
+
+    setJsonResponse(content);
+  }
+
+  return (
+    <>
       <div className="App">
-        <h1>[V2/SDK] Get Content by Handle</h1>
+        <h1>[CC] Get Content by Handle</h1>
         <section>
           <h2>Settings</h2>
           <label htmlFor="spaceId">spaceId</label>
@@ -62,7 +69,7 @@ function ContentByHandleV2SDK() {
           />
           <button onClick={getContent}>Submit</button>
         </section>
-  
+
         <section>
           <h2>Response</h2>
           <button
@@ -77,7 +84,8 @@ function ContentByHandleV2SDK() {
           <pre>{JSON.stringify(jsonResponse, null, 2)}</pre>
         </section>
       </div>
-    )  
+    </>
+  );
 }
 
-export default ContentByHandleV2SDK;
+export default ContentByHandle;
