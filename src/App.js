@@ -2,6 +2,10 @@ import { useState } from "react";
 import Storefront from "@nacelle/storefront-sdk";
 import "./styles.css";
 
+/* compat connector: */
+import NacelleClient from '@nacelle/client-js-sdk';
+import createCompatibilityConnector from "@nacelle/compatibility-connector";
+
 function App() {
   const [spaceId, setSpaceId] = useState("");
   const [token, setToken] = useState("");
@@ -12,15 +16,27 @@ function App() {
   });
 
   async function getContent() {
+    const compatibilityConnector = new createCompatibilityConnector({
+      endpoint: `https://storefront.api.nacelle.com/graphql/v1/spaces/${spaceId}`,
+      token: token,
+      locale: "en-US",
+    });
+
+    const client = new NacelleClient({
+      connector: compatibilityConnector,
+    });
+
+    /*
     const client = Storefront({
       storefrontEndpoint: `https://storefront.api.nacelle.com/graphql/v1/spaces/${spaceId}`,
       token: token,
     });
+    */
 
-    const content = await client.content({
+    const content = await client.data.content({
       handles: [handle],
     });
-
+    
     setJsonResponse(content[0]);
   }
 
