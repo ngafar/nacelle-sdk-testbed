@@ -1,7 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 import "./styles.css";
 import ContentByHandleV2SDK from "./pages/ContentByHandleV2SDK";
-import Test from "./pages/Test";
 
 function App() {
   return (
