@@ -1,0 +1,14 @@
+.App {
+  font-family: monospace;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  gap: 0.5em;
+}
+
+input {
+  max-width: 200px;
+}
