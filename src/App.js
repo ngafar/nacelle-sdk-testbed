@@ -6,6 +6,7 @@ function App() {
   const [spaceId, setSpaceId] = useState("");
   const [token, setToken] = useState("");
   const [handle, setHandle] = useState("");
+  const [nacelleEntryId, setNacelleEntryId] = useState("");
   const [jsonResponse, setJsonResponse] = useState({
     msg: "waiting on credentials",
   });
@@ -21,7 +22,6 @@ function App() {
     });
 
     setJsonResponse(content[0]);
-    console.log(content[0]);
   }
 
   return (
@@ -52,6 +52,14 @@ function App() {
           name="handle"
           value={handle}
           onChange={(e) => setHandle(e.target.value)}
+        />
+        <label htmlFor="nacelleEntryId">nacelleEntryId (do not use)</label>
+        <input
+          type="text"
+          id="nacelleEntryId"
+          name="nacelleEntryId"
+          value={nacelleEntryId}
+          onChange={(e) => setNacelleEntryId(e.target.value)}
         />
         <button onClick={getContent}>Submit</button>
       </section>
