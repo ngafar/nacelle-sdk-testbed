@@ -1,12 +1,20 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./styles.css";
-import ContentByHandleV2SDK from "./pages/ContentByHandleV2SDK";
+import Index from "./pages/v2/Index";
+import Test from "./pages/v2/Test";
+
+import v2_routes_group from "./pages/v2/_routes";
 
 function App() {
   return (
     <>
+      <h1>Test</h1>
       <Routes>
-        <Route path="/v2/content-by-handle" element={<ContentByHandleV2SDK />} />
+        {v2_routes_group.map((route, idx) => {
+          return (
+            <Route key={idx} path={route.path} element={<route.component />} />
+          );
+        })}
       </Routes>
     </>
   );
