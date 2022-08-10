@@ -1,8 +1,6 @@
 import { useState } from "react";
-import Storefront from "@nacelle/storefront-sdk";
-import Response from "../../layouts/Response";
 
-function ContentByHandle() {
+function Input(props) {
   const [spaceId, setSpaceId] = useState("");
   const [token, setToken] = useState("");
   const [handle, setHandle] = useState("");
@@ -10,19 +8,6 @@ function ContentByHandle() {
   const [jsonResponse, setJsonResponse] = useState({
     msg: "waiting on credentials",
   });
-
-  async function getContent() {
-    const client = Storefront({
-      storefrontEndpoint: `https://storefront.api.nacelle.com/graphql/v1/spaces/${spaceId}`,
-      token: token,
-    });
-
-    const content = await client.content({
-      handles: [handle],
-    });
-
-    setJsonResponse(content[0]);
-  }
 
   return (
     <>
@@ -61,12 +46,10 @@ function ContentByHandle() {
           value={nacelleEntryId}
           onChange={(e) => setNacelleEntryId(e.target.value)}
         />
-        <button onClick={getContent}>Submit</button>
+        <button onClick={props.getContent}>Submit</button>
       </section>
-
-      <Response jsonResponse={jsonResponse}></Response>
     </>
   );
 }
 
-export default ContentByHandle;
+export default Input;
