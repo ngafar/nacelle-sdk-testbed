@@ -31,20 +31,44 @@ function Layout(props) {
           value={token}
           onChange={(e) => setToken(e.target.value)}
         />
-        <label htmlFor="handle">handle</label>
+        <label
+          htmlFor="handle"
+          hidden={
+            props.ignore && props.ignore.includes("handle") ? true : false
+          }
+        >
+          handle
+        </label>
         <input
           type="text"
           id="handle"
           name="handle"
           value={handle}
+          hidden={
+            props.ignore && props.ignore.includes("handle") ? true : false
+          }
           onChange={(e) => setHandle(e.target.value)}
         />
-        <label htmlFor="nacelleEntryId">nacelleEntryId (do not use)</label>
+        <label
+          htmlFor="nacelleEntryId"
+          hidden={
+            props.ignore && props.ignore.includes("nacelleEntryId")
+              ? true
+              : false
+          }
+        >
+          nacelleEntryId (not working)
+        </label>
         <input
           type="text"
           id="nacelleEntryId"
           name="nacelleEntryId"
           value={nacelleEntryId}
+          hidden={
+            props.ignore && props.ignore.includes("nacelleEntryId")
+              ? true
+              : false
+          }
           onChange={(e) => setNacelleEntryId(e.target.value)}
         />
 

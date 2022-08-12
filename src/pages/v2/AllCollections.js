@@ -16,7 +16,11 @@ function AllCollections() {
 
   return (
     <>
-      <Layout title="[V2] Get All Collections" requestFunc={getContent}></Layout>
+      <Layout
+        title="[V2] Get All Collections"
+        requestFunc={getContent}
+        ignore={["handle", "nacelleEntryId"]}
+      ></Layout>
     </>
   );
 }

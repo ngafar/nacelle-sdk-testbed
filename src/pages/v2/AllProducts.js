@@ -16,7 +16,11 @@ function AllProducts() {
 
   return (
     <>
-      <Layout title="[V2] Get All Products" requestFunc={getContent}></Layout>
+      <Layout
+        title="[V2] Get All Products"
+        requestFunc={getContent}
+        ignore={["handle", "nacelleEntryId"]}
+      ></Layout>
     </>
   );
 }
