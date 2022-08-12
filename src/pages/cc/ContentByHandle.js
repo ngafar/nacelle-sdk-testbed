@@ -21,10 +21,6 @@ function ContentByHandle() {
     return content;
   }
 
-  function hello(sId) {
-    console.log(`hi ${sId}`);
-  }
-
   return (
     <>
       <Layout title="[CC] Get Content by Handle" requestFunc={getContent}></Layout>
