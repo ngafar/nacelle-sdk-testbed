@@ -2,8 +2,9 @@ import { Routes, Route } from "react-router-dom";
 import "./styles.css";
 
 import Home from "./pages/Home";
-import cc_routes_group from "./pages/cc/_routes";
+import v1_routes_group from "./pages/v1/_routes";
 import v2_routes_group from "./pages/v2/_routes";
+import cc_routes_group from "./pages/cc/_routes";
 
 function App() {
   return (
@@ -15,13 +16,19 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        {cc_routes_group.map((route, idx) => {
+        {v1_routes_group.map((route, idx) => {
           return (
             <Route key={idx} path={route.path} element={<route.component />} />
           );
         })}
 
         {v2_routes_group.map((route, idx) => {
+          return (
+            <Route key={idx} path={route.path} element={<route.component />} />
+          );
+        })}
+
+        {cc_routes_group.map((route, idx) => {
           return (
             <Route key={idx} path={route.path} element={<route.component />} />
           );
