@@ -17,7 +17,8 @@ function AllContent() {
   return (
     <>
       <Layout
-        title="[V2] Get All Content"
+        title="[V2] Get All Content*"
+        note="*This does not actually get all entries, just 5. Geting everything would be take quite a bit of time."
         requestFunc={getContent}
         ignore={["handle", "nacelleEntryId"]}
       ></Layout>

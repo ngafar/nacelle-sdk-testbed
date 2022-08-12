@@ -2,7 +2,7 @@ import Storefront from "@nacelle/storefront-sdk";
 import Layout from "../../components/Layout";
 
 function ContentByHandle() {
-  async function getContent(spaceId, token, handle) {
+  async function getContent(spaceId, token, handle, nacelleEntryId) {
     const client = Storefront({
       storefrontEndpoint: `https://storefront.api.nacelle.com/graphql/v1/spaces/${spaceId}`,
       token: token,
