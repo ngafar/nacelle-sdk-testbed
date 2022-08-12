@@ -1,6 +1,6 @@
 import NacelleClient from "@nacelle/client-js-sdk";
 import createCompatibilityConnector from "@nacelle/compatibility-connector";
-import Layout from "../../layouts/Layout";
+import Layout from "../../components/Layout";
 
 function ContentByHandle() {
   async function getContent(spaceId, token, handle) {

@@ -1,5 +1,5 @@
 import Storefront from "@nacelle/storefront-sdk";
-import Layout from "../../layouts/Layout";
+import Layout from "../../components/Layout";
 
 function AllProducts() {
   async function getContent(spaceId, token, handle) {
