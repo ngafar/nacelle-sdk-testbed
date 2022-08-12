@@ -17,7 +17,8 @@ function AllCollections() {
   return (
     <>
       <Layout
-        title="[V2] Get All Collections"
+        title="[V2] Get All Collections*"
+        note="*Depending on how many collections the merchant has, this can take a LONG time."
         requestFunc={getContent}
         ignore={["handle", "nacelleEntryId"]}
       ></Layout>
