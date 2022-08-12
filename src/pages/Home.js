@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
 import v2_routes_group from "./v2/_routes";
 
 function Home() {
   return (
     <>
+      <h2>V1</h2>
+
       <h2>V2</h2>
       <ul>
         {v2_routes_group.map((route, idx) => {
@@ -14,6 +15,9 @@ function Home() {
           );
         })}
       </ul>
+
+      <h2>Compatability Connector</h2>
+
     </>
   );
 }
