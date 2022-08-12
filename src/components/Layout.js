@@ -12,9 +12,9 @@ function Layout(props) {
 
   return (
     <>
-      <h1>{props.title}</h1>
+      <h2>{props.title}</h2>
       <section>
-        <h2>Settings</h2>
+        <h3>Settings</h3>
         <label htmlFor="spaceId">spaceId</label>
         <input
           type="text"

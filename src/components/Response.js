@@ -2,7 +2,7 @@ function Response(props) {
   return (
     <>
       <section>
-        <h2>Response</h2>
+        <h3>Response</h3>
         <button
           onClick={() => {
             navigator.clipboard.writeText(
