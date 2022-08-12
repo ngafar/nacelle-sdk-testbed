@@ -1,14 +1,17 @@
 import { Routes, Route } from "react-router-dom";
 import "./styles.css";
 
-import Home from "./pages/Home"
+import Home from "./pages/Home";
 import cc_routes_group from "./pages/cc/_routes";
 import v2_routes_group from "./pages/v2/_routes";
 
 function App() {
   return (
     <div className="App">
-      <h1>Test</h1>
+      <h1>
+        <a href="/">Nacelle SDK Testbed</a>
+      </h1>
+
       <Routes>
         <Route path="/" element={<Home />} />
 
