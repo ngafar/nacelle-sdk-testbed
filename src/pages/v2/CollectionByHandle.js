@@ -18,7 +18,7 @@ function CollectionByHandle() {
   return (
     <>
       <Layout
-        title="[V2] Get Product by Handle"
+        title="[V2] Get Collection by Handle"
         requestFunc={getContent}
       ></Layout>
     </>
