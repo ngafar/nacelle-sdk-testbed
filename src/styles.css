@@ -15,6 +15,9 @@ body {
   padding: 10px;
 }
 
+a {
+  color: #000;
+}
 
 section {
   display: flex;
@@ -41,7 +44,7 @@ button {
 }
 
 button:hover {
-  background-color: #a0a5a9;
+  background-color: #e3eaef;
   color: black;
   transition: 0.5s;
   cursor: pointer
@@ -49,4 +52,6 @@ button:hover {
 
 pre {
   overflow: scroll;
+  background-color: #e3eaef;
+  padding: 10px;
 }
