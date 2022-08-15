@@ -32,6 +32,7 @@ function ContentByHandle() {
       <Layout
         title="[V2] Get Product by Handle"
         requestFunc={getContent}
+        ignore={["maxReturnedEntries"]}
       ></Layout>
     </>
   );

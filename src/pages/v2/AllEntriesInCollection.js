@@ -2,7 +2,7 @@ import Storefront from "@nacelle/storefront-sdk";
 import Layout from "../../components/Layout";
 
 function AllEntriesInCollection() {
-  async function getContent(spaceId, token, handle) {
+  async function getContent(spaceId, token, handle, nacelleEntryId, maxReturnedEntries) {
     const client = Storefront({
       storefrontEndpoint: `https://storefront.api.nacelle.com/graphql/v1/spaces/${spaceId}`,
       token: token,
@@ -10,7 +10,7 @@ function AllEntriesInCollection() {
 
     const content = await client.productCollectionEntries({
       handle: handle,
-      maxReturnedEntries: -1, // -1 to get all
+      maxReturnedEntries: maxReturnedEntries, // -1 to get all
     });
 
     console.log(content);
@@ -20,8 +20,9 @@ function AllEntriesInCollection() {
   return (
     <>
       <Layout
-        title="[V2] Get All Entries in Collection"
+        title="[V2] Get All Products in Collection"
         requestFunc={getContent}
+        ignore={["nacelleEntryId"]}
       ></Layout>
     </>
   );

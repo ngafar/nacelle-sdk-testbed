@@ -32,6 +32,7 @@ function CollectionByHandle() {
       <Layout
         title="[V2] Get Collection by Handle"
         requestFunc={getContent}
+        ignore={["maxReturnedEntries"]}
       ></Layout>
     </>
   );

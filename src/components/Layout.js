@@ -6,6 +6,7 @@ function Layout(props) {
   const [token, setToken] = useState("");
   const [handle, setHandle] = useState("");
   const [nacelleEntryId, setNacelleEntryId] = useState("");
+  const [maxReturnedEntries, setMaxReturnedEntries] = useState(5);
   const [jsonResponse, setJsonResponse] = useState({
     msg: "waiting on credentials",
   });
@@ -76,11 +77,33 @@ function Layout(props) {
           }
           onChange={(e) => setNacelleEntryId(e.target.value)}
         />
+        <label
+          htmlFor="maxReturnedEntries"
+          hidden={
+            props.ignore && props.ignore.includes("maxReturnedEntries")
+              ? true
+              : false
+          }
+        >
+          maxReturnedEntries
+        </label>
+        <input
+          type="text"
+          id="maxReturnedEntries"
+          name="maxReturnedEntries"
+          value={maxReturnedEntries}
+          hidden={
+            props.ignore && props.ignore.includes("maxReturnedEntries")
+              ? true
+              : false
+          }
+          onChange={(e) => setMaxReturnedEntries(e.target.value)}
+        />
 
         <button
           onClick={() =>
             props
-              .requestFunc(spaceId, token, handle, nacelleEntryId)
+              .requestFunc(spaceId, token, handle, nacelleEntryId, maxReturnedEntries)
               .then((resp) => {
                 setJsonResponse(resp);
               })
