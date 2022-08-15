@@ -12,10 +12,12 @@ function Layout(props) {
 
   return (
     <>
-      <h2>{props.title}</h2>
+      <section>
+        <h2>{props.title}</h2>
 
-      {props.note ? <p>{props.note}</p> : <p></p>}
-      
+        {props.note ? <p>{props.note}</p> : <></>}
+      </section>
+
       <section>
         <h3>Settings</h3>
         <label htmlFor="spaceId">spaceId</label>
@@ -77,9 +79,11 @@ function Layout(props) {
 
         <button
           onClick={() =>
-            props.requestFunc(spaceId, token, handle, nacelleEntryId).then((resp) => {
-              setJsonResponse(resp);
-            })
+            props
+              .requestFunc(spaceId, token, handle, nacelleEntryId)
+              .then((resp) => {
+                setJsonResponse(resp);
+              })
           }
         >
           Submit

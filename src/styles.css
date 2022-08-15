@@ -1,6 +1,20 @@
-.App {
+body {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
   font-family: monospace;
 }
+
+.App {
+  background-color: aliceblue;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 680px;
+  max-width: 100%;
+  min-height: 100vh;
+  padding: 10px;
+}
+
 
 section {
   display: flex;
@@ -10,9 +24,23 @@ section {
 }
 
 input {
-  max-width: 200px;
+  max-width: 100%;
+  padding: 10px;
+  font-size: 16px;
 }
 
 button {
   max-width: 100px;
+  background-color: #000;
+  color: aliceblue;
+  border: 0;
+  border-radius: 0;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: #a0a5a9;
+  color: black;
+  transition: 0.5s;
+  cursor: pointer
 }
