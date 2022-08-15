@@ -8,9 +8,21 @@ function ContentByHandle() {
       token: token,
     });
 
-    const content = await client.products({
-      handles: [handle],
-    });
+    function setParams() {
+      const handleParams = { handles: [handle] };
+
+      const entryIdParams = { nacelleEntryIds: [nacelleEntryId] };
+
+      if (nacelleEntryId != "") {
+        return entryIdParams;
+      } else {
+        return handleParams;
+      }
+    }
+
+    const params = await setParams();
+    
+    const content = await client.products(params);
 
     return content[0];
   }

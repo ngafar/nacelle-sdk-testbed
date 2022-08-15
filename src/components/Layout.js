@@ -62,7 +62,7 @@ function Layout(props) {
               : false
           }
         >
-          nacelleEntryId (not working)
+          nacelleEntryId (not required if handle was provided)
         </label>
         <input
           type="text"
