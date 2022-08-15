@@ -13,7 +13,7 @@ function CollectionByHandle() {
 
       const entryIdParams = { nacelleEntryIds: [nacelleEntryId] };
 
-      if (nacelleEntryId != "") {
+      if (nacelleEntryId !== "") {
         return entryIdParams;
       } else {
         return handleParams;
