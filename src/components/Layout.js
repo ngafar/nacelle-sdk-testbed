@@ -85,7 +85,7 @@ function Layout(props) {
               : false
           }
         >
-          maxReturnedEntries
+          maxReturnedEntries (larger number == longer load times)
         </label>
         <input
           type="text"
