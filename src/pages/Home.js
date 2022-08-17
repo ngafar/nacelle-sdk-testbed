@@ -27,7 +27,7 @@ function Home() {
         })}
       </ul>
 
-      <h2>Compatability Connector</h2>
+      <h2>Compatibility Connector</h2>
       <ul>
         {cc_routes_group.map((route, idx) => {
           return (
