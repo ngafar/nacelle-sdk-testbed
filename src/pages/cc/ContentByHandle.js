@@ -26,7 +26,7 @@ function ContentByHandle() {
       <Layout
         title="[CC] Get Content by Handle"
         requestFunc={getContent}
-        ignore={["nacelleEntryId"]}
+        ignore={["maxReturnedEntries", "nacelleEntryId"]}
       ></Layout>
     </>
   );
