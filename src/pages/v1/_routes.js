@@ -1,5 +1,6 @@
 import AllProducts from "./AllProducts";
 import AllCollections from "./AllCollections";
+import AllEntriesInCollection from "./AllEntriesInCollection";
 import AllContent from "./AllContent";
 import ProductByHandle from './ProductByHandle'
 import CollectionByHandle from './CollectionByHandle'
@@ -8,6 +9,7 @@ import ContentByHandle from "./ContentByHandle";
 const v1_routes_group = [
     {path: '/v1/all-products', component: AllProducts, name: "Get All Products"},
     {path: '/v1/all-collections', component: AllCollections, name: "Get All Collections"},
+    {path: '/v2/all-products-in-collection', component: AllEntriesInCollection, name: "Get All Products in Collection"},
     {path: '/v1/all-content', component: AllContent, name: "Get All Content"},
 
     {path: '/v1/product-by-handle', component: ProductByHandle, name: "Get Product by Handle"},
