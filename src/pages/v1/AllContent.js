@@ -2,7 +2,7 @@ import NacelleClient from "@nacelle/client-js-sdk";
 import Layout from "../../components/Layout";
 
 function AllContent() {
-  async function getContent(spaceId, token, handle, nacelleEntryId) {
+  async function getContent(spaceId, token, handle, nacelleEntryId, maxReturnedEntries) {
     const settings = {
       id: spaceId,
       token: token,
@@ -11,7 +11,7 @@ function AllContent() {
     };
 
     const client = new NacelleClient(settings);
-    const content = await client.data.allCollections();
+    const content = await client.data.allContent({limit: maxReturnedEntries});
 
     return content;
   }
@@ -22,7 +22,7 @@ function AllContent() {
         title="[V1] Get All Collections"
         note="This can take some time if there are a lot of entries."
         requestFunc={getContent}
-        ignore={["handle", "nacelleEntryId", "maxReturnedEntries"]}
+        ignore={["handle", "nacelleEntryId"]}
       ></Layout>
     </>
   );
