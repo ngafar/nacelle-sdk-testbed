@@ -37,6 +37,15 @@ function Home() {
           );
         })}
       </ul>
+
+      <hr />
+
+      <p>
+        <small>
+          Source code available on{" "}
+          <a href="https://github.com/ngafar/nacelle-sdk-testbed">Github</a>
+        </small>
+      </p>
     </>
   );
 }
