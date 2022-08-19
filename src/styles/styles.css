@@ -71,3 +71,7 @@ pre {
   background-color: #e3eaef;
   padding: 10px;
 }
+
+hr {
+  border: 1px solid black;
+}
