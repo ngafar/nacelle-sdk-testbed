@@ -22,7 +22,6 @@ function AllCollections() {
         title="[V2] Get All Collections"
         requestFunc={getContent}
         fields={["spaceID", "token", "maxReturnedEntries"]}
-        ignore={["handle", "nacelleEntryId"]}
       ></Layout>
     </>
   );

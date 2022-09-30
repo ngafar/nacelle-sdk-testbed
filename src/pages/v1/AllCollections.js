@@ -23,7 +23,6 @@ function AllCollections() {
         note="This can take some time if there are a lot of entries."
         requestFunc={getContent}
         fields={["spaceID", "token"]}
-        ignore={["handle", "nacelleEntryId", "maxReturnedEntries"]}
       ></Layout>
     </>
   );

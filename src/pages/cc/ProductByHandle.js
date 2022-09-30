@@ -27,7 +27,6 @@ function ProductByHandle() {
         title="[CC] Get Product by Handle"
         requestFunc={getContent}
         fields={["spaceID", "token", "handle"]}
-        ignore={["maxReturnedEntries", "nacelleEntryId"]}
       ></Layout>
     </>
   );

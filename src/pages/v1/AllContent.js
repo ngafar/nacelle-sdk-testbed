@@ -23,7 +23,6 @@ function AllContent() {
         note="This can take some time if there are a lot of entries."
         requestFunc={getContent}
         fields={["spaceID", "token", "maxReturnedEntries"]}
-        ignore={["handle", "nacelleEntryId"]}
       ></Layout>
     </>
   );

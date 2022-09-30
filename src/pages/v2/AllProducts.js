@@ -24,7 +24,6 @@ function AllProducts() {
         title="[V2] Get All Products"
         requestFunc={getContent}
         fields={["spaceID", "token", "maxReturnedEntries"]}
-        ignore={["handle", "nacelleEntryId"]}
       ></Layout>
     </>
   );

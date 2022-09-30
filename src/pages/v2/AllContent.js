@@ -22,7 +22,6 @@ function AllContent() {
         title="[V2] Get All Content"
         requestFunc={getContent}
         fields={["spaceID", "token", "maxReturnedEntries"]}
-        ignore={["handle", "nacelleEntryId"]}
       ></Layout>
     </>
   );

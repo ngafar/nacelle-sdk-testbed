@@ -22,7 +22,6 @@ function CollectionByHandle() {
         title="[V1] Get Collection by Handle"
         requestFunc={getContent}
         fields={["spaceID", "token", "handle"]}
-        ignore={["nacelleEntryId", "maxReturnedEntries"]}
       ></Layout>
     </>
   );

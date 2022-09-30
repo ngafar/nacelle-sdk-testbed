@@ -25,7 +25,6 @@ function ContentByHandle() {
         title="[V1] Get Content by Handle"
         requestFunc={getContent}
         fields={["spaceID", "token", "handle", "type"]}
-        ignore={["nacelleEntryId", "maxReturnedEntries"]}
       ></Layout>
     </>
   );

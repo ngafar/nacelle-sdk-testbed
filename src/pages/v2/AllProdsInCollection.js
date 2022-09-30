@@ -23,7 +23,6 @@ function AllProdsInCollection() {
         title="[V2] Get All Products in Collection"
         requestFunc={getContent}
         fields={["spaceID", "token", "handle", "maxReturnedEntries"]}
-        ignore={["maxReturnedEntries"]}
       ></Layout>
     </>
   );
