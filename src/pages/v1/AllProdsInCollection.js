@@ -1,7 +1,7 @@
 import NacelleClient from "@nacelle/client-js-sdk";
 import Layout from "../../components/Layout";
 
-function AllEntriesInCollection() {
+function AllProdsInCollection() {
   async function getContent(inputs) {
     const settings = {
       id: inputs.spaceID,
@@ -32,4 +32,4 @@ function AllEntriesInCollection() {
   );
 }
 
-export default AllEntriesInCollection;
+export default AllProdsInCollection;
