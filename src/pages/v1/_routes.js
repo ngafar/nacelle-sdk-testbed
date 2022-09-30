@@ -14,7 +14,7 @@ const v1_routes_group = [
 
     {path: '/v1/product-by-handle', component: ProductByHandle, name: "Get Product by Handle"},
     {path: '/v1/collection-by-handle', component: CollectionByHandle, name: "Get Collection by Handle"},
-    {path: '/v1/content-by-handle', component: ContentByHandle, name: " 🚧 Get Content by Handle"}
+    {path: '/v1/content-by-handle', component: ContentByHandle, name: "Get Content by Handle"}
 ]
 
 export default v1_routes_group

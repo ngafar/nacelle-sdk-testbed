@@ -28,7 +28,7 @@ The SDK testbed is intended to provide users with a simple way to access multipl
 - Get All Content
 - Get Product by Handle
 - Get Collection by Handle
-- 🚧 Get Content by Handle
+- Get Content by Handle
 
 **V2**
 
