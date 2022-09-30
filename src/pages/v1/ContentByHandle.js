@@ -16,6 +16,7 @@ function ContentByHandle() {
       type: inputs.type,
     });
 
+    console.log(content)
     return content;
   }
 

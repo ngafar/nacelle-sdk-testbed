@@ -13,6 +13,7 @@ function AllContent() {
     const client = new NacelleClient(settings);
     const content = await client.data.allContent({limit: inputs.maxReturnedEntries});
 
+    console.log(content)
     return content;
   }
 

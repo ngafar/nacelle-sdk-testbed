@@ -13,6 +13,7 @@ function CollectionByHandle() {
     const client = new NacelleClient(settings);
     const content = await client.data.collection({ handle: inputs.handle });
 
+    console.log(content)
     return content;
   }
 

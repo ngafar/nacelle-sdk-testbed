@@ -13,6 +13,7 @@ function ProductByHandle() {
     const client = new NacelleClient(settings);
     const content = await client.data.product({ handle: inputs.handle });
 
+    console.log(content)
     return content;
   }
 

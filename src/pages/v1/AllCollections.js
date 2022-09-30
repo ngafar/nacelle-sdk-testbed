@@ -13,6 +13,7 @@ function AllCollections() {
     const client = new NacelleClient(settings);
     const content = await client.data.allCollections();
 
+    console.log(content)
     return content;
   }
 

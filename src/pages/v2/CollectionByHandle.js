@@ -24,6 +24,7 @@ function CollectionByHandle() {
 
     const content = await client.productCollections(params);
 
+    console.log(content)
     return content;
   }
 

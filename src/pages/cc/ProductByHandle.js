@@ -18,6 +18,7 @@ function ProductByHandle() {
       handle: inputs.handle,
     });
 
+    console.log(content)
     return content;
   }
 

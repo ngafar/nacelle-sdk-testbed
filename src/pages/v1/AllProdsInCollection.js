@@ -17,6 +17,7 @@ function AllProdsInCollection() {
       itemsPerPage: inputs.maxReturnedEntries,
     });
 
+    console.log(content)
     return content;
   }
 

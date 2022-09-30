@@ -23,7 +23,8 @@ function ContentByHandle() {
     const params = await setParams();
 
     const content = await client.content(params);
-
+    
+    console.log(content)
     return content;
   }
 

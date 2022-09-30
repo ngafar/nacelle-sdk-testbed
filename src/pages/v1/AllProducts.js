@@ -13,6 +13,7 @@ function AllProducts() {
     const client = new NacelleClient(settings);
     const content = await client.data.allProducts();
 
+    console.log(content)
     return content;
   }
 

@@ -24,6 +24,7 @@ function ContentByHandle() {
     
     const content = await client.products(params);
 
+    console.log(content)
     return content;
   }
 
