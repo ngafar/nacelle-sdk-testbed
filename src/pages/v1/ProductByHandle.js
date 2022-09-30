@@ -2,16 +2,16 @@ import NacelleClient from "@nacelle/client-js-sdk";
 import Layout from "../../components/Layout";
 
 function ProductByHandle() {
-  async function getContent(spaceId, token, handle, nacelleEntryId) {
+  async function getContent(inputs) {
     const settings = {
-      id: spaceId,
-      token: token,
+      id: inputs.spaceID,
+      token: inputs.token,
       nacelleEndpoint: "https://hailfrequency.com/v3/graphql",
       useStatic: false,
     };
 
     const client = new NacelleClient(settings);
-    const content = await client.data.product({ handle: handle });
+    const content = await client.data.product({ handle: inputs.handle });
 
     return content;
   }
@@ -21,6 +21,7 @@ function ProductByHandle() {
       <Layout
         title="[V1] Get Product by Handle"
         requestFunc={getContent}
+        fields={["spaceID", "token", "handle"]}
         ignore={["nacelleEntryId", "maxReturnedEntries"]}
       ></Layout>
     </>

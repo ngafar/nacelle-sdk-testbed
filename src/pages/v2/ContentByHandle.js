@@ -2,18 +2,18 @@ import Storefront from "@nacelle/storefront-sdk";
 import Layout from "../../components/Layout";
 
 function ContentByHandle() {
-  async function getContent(spaceId, token, handle, nacelleEntryId) {
+  async function getContent(inputs) {
     const client = Storefront({
-      storefrontEndpoint: `https://storefront.api.nacelle.com/graphql/v1/spaces/${spaceId}`,
-      token: token,
+      storefrontEndpoint: `https://storefront.api.nacelle.com/graphql/v1/spaces/${inputs.spaceID}`,
+      token: inputs.token,
     });
 
     function setParams() {
-      const handleParams = { handles: [handle] };
+      const handleParams = { handles: [inputs.handle] };
 
-      const entryIdParams = { nacelleEntryIds: [nacelleEntryId] };
+      const entryIdParams = { nacelleEntryIds: [inputs.nacelleEntryId] };
 
-      if (nacelleEntryId !== "") {
+      if (inputs.nacelleEntryId !== undefined) {
         return entryIdParams;
       } else {
         return handleParams;
@@ -32,6 +32,7 @@ function ContentByHandle() {
       <Layout
         title="[V2] Get Content by Handle"
         requestFunc={getContent}
+        fields={["spaceID", "token", "handle", "nacelleEntryId"]}
         ignore={["maxReturnedEntries"]}
       ></Layout>
     </>

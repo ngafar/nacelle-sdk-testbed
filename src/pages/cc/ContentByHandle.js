@@ -3,10 +3,10 @@ import createCompatibilityConnector from "@nacelle/compatibility-connector";
 import Layout from "../../components/Layout";
 
 function ContentByHandle() {
-  async function getContent(spaceId, token, handle) {
+  async function getContent(inputs) {
     const compatibilityConnector = new createCompatibilityConnector({
-      endpoint: `https://storefront.api.nacelle.com/graphql/v1/spaces/${spaceId}`,
-      token: token,
+      endpoint: `https://storefront.api.nacelle.com/graphql/v1/spaces/${inputs.spaceID}`,
+      token: inputs.token,
       locale: "en-US",
     });
 
@@ -15,7 +15,7 @@ function ContentByHandle() {
     });
 
     const content = await client.data.content({
-      handle: handle,
+      handle: inputs.handle,
     });
 
     return content;
@@ -26,6 +26,7 @@ function ContentByHandle() {
       <Layout
         title="[CC] Get Content by Handle"
         requestFunc={getContent}
+        fields={["spaceID", "token", "handle"]}
         ignore={["maxReturnedEntries", "nacelleEntryId"]}
       ></Layout>
     </>

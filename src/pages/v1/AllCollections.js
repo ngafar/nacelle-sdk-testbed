@@ -2,10 +2,10 @@ import NacelleClient from "@nacelle/client-js-sdk";
 import Layout from "../../components/Layout";
 
 function AllCollections() {
-  async function getContent(spaceId, token, handle, nacelleEntryId) {
+  async function getContent(inputs) {
     const settings = {
-      id: spaceId,
-      token: token,
+      id: inputs.spaceID,
+      token: inputs.token,
       nacelleEndpoint: "https://hailfrequency.com/v3/graphql",
       useStatic: false,
     };
@@ -22,6 +22,7 @@ function AllCollections() {
         title="[V1] Get All Collections"
         note="This can take some time if there are a lot of entries."
         requestFunc={getContent}
+        fields={["spaceID", "token"]}
         ignore={["handle", "nacelleEntryId", "maxReturnedEntries"]}
       ></Layout>
     </>
