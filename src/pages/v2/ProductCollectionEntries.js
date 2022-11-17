@@ -1,7 +1,7 @@
 import Storefront from "@nacelle/storefront-sdk";
 import Layout from "../../components/Layout";
 
-function AllProdsInCollection() {
+function ProductCollectionEntries() {
   async function getContent(inputs) {
     const client = Storefront({
       storefrontEndpoint: `https://storefront.api.nacelle.com/graphql/v1/spaces/${inputs.spaceID}`,
@@ -20,7 +20,7 @@ function AllProdsInCollection() {
   return (
     <>
       <Layout
-        title="[V2] Get All Products in Collection"
+        title="[V2] productCollectionEntries"
         requestFunc={getContent}
         fields={["spaceID", "token", "handle", "maxReturnedEntries"]}
       ></Layout>
@@ -28,4 +28,4 @@ function AllProdsInCollection() {
   );
 }
 
-export default AllProdsInCollection;
+export default ProductCollectionEntries;
