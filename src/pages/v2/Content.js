@@ -9,7 +9,7 @@ function Content() {
     });
 
     function setParams() {
-      if (inputs.handle == undefined && inputs.nacelleEntryId == undefined) {
+      if (inputs.handle === undefined && inputs.nacelleEntryId === undefined) {
         // Return all content entries.
         return {};
       } else if (inputs.nacelleEntryId !== undefined) {
