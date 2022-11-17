@@ -1,7 +1,7 @@
 import NacelleClient from "@nacelle/client-js-sdk";
 import Layout from "../../components/Layout";
 
-function ProductByHandle() {
+function Collection() {
   async function getContent(inputs) {
     const settings = {
       id: inputs.spaceID,
@@ -11,7 +11,7 @@ function ProductByHandle() {
     };
 
     const client = new NacelleClient(settings);
-    const content = await client.data.product({ handle: inputs.handle });
+    const content = await client.data.collection({ handle: inputs.handle });
 
     console.log(content)
     return content;
@@ -20,7 +20,7 @@ function ProductByHandle() {
   return (
     <>
       <Layout
-        title="[V1] Get Product by Handle"
+        title="[V1] collection"
         requestFunc={getContent}
         fields={["spaceID", "token", "handle"]}
       ></Layout>
@@ -28,4 +28,4 @@ function ProductByHandle() {
   );
 }
 
-export default ProductByHandle;
+export default Collection;

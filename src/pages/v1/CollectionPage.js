@@ -1,7 +1,7 @@
 import NacelleClient from "@nacelle/client-js-sdk";
 import Layout from "../../components/Layout";
 
-function ContentByHandle() {
+function CollectionPage() {
   async function getContent(inputs) {
     const settings = {
       id: inputs.spaceID,
@@ -11,9 +11,10 @@ function ContentByHandle() {
     };
 
     const client = new NacelleClient(settings);
-    const content = await client.data.content({
+    const content = await client.data.collectionPage({
       handle: inputs.handle,
-      type: inputs.type,
+      paginate: true,
+      itemsPerPage: inputs.maxReturnedEntries,
     });
 
     console.log(content)
@@ -23,12 +24,13 @@ function ContentByHandle() {
   return (
     <>
       <Layout
-        title="[V1] Get Content by Handle"
+        title="[V1] collectionPage"
+        note="This can take some time if there are a lot of entries."
         requestFunc={getContent}
-        fields={["spaceID", "token", "handle", "type"]}
+        fields={["spaceID", "token", "handle", "maxReturnedEntries"]}
       ></Layout>
     </>
   );
 }
 
-export default ContentByHandle;
+export default CollectionPage;

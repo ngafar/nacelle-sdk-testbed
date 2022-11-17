@@ -1,20 +1,19 @@
-import AllProducts from "./AllProducts";
 import AllCollections from "./AllCollections";
-import AllProdsInCollection from "./AllProdsInCollection";
 import AllContent from "./AllContent";
-import ProductByHandle from './ProductByHandle'
-import CollectionByHandle from './CollectionByHandle'
-import ContentByHandle from "./ContentByHandle";
+import AllProducts from "./AllProducts";
+import Collection from "./Collection";
+import CollectionPage from "./CollectionPage";
+import Content from "./Content";
+import Product from "./Product";
 
 const v1_routes_group = [
-    {path: '/v1/all-products', component: AllProducts, name: "Get All Products"},
-    {path: '/v1/all-collections', component: AllCollections, name: "Get All Collections"},
-    {path: '/v2/all-prods-in-collection', component: AllProdsInCollection, name: "Get All Products in Collection"},
-    {path: '/v1/all-content', component: AllContent, name: "Get All Content"},
-
-    {path: '/v1/product-by-handle', component: ProductByHandle, name: "Get Product by Handle"},
-    {path: '/v1/collection-by-handle', component: CollectionByHandle, name: "Get Collection by Handle"},
-    {path: '/v1/content-by-handle', component: ContentByHandle, name: "Get Content by Handle"}
+    {path: '/v1/all-collections', component: AllCollections, name: "allCollections"},
+    {path: '/v1/all-content', component: AllContent, name: "allContent"},
+    {path: '/v1/all-products', component: AllProducts, name: "allProducts"},
+    {path: '/v1/collection', component: Collection, name: "collection"},
+    {path: '/v1/collection-page', component: CollectionPage, name: "collectionPage"},
+    {path: '/v1/content', component: Content, name: "content"},
+    {path: '/v1/product', component: Product, name: "product"},
 ]
 
 export default v1_routes_group

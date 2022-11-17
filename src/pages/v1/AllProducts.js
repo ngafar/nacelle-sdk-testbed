@@ -20,7 +20,7 @@ function AllProducts() {
   return (
     <>
       <Layout
-        title="[V1] Get All Products"
+        title="[V1] allProducts"
         note="This can take some time if there are a lot of entries."
         requestFunc={getContent}
         fields={["spaceID", "token"]}
