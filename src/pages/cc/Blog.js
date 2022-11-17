@@ -25,7 +25,7 @@ function Blog() {
   return (
     <>
       <Layout
-        title="[CC] Get Content by Handle"
+        title="[CC] blog"
         requestFunc={getContent}
         fields={["spaceID", "token", "handle"]}
       ></Layout>

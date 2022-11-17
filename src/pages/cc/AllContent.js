@@ -23,7 +23,7 @@ function AllContent() {
   return (
     <>
       <Layout
-        title="[CC] Get All Content"
+        title="[CC] allContent"
         requestFunc={getContent}
         fields={["spaceID", "token"]}
       ></Layout>

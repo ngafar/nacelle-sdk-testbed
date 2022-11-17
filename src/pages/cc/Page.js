@@ -25,7 +25,7 @@ function Page() {
   return (
     <>
       <Layout
-        title="[CC] Get Content by Handle"
+        title="[CC] page"
         requestFunc={getContent}
         fields={["spaceID", "token", "handle"]}
       ></Layout>

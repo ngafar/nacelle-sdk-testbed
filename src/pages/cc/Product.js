@@ -25,7 +25,7 @@ function Product() {
   return (
     <>
       <Layout
-        title="[CC] Get Product by Handle"
+        title="[CC] product"
         requestFunc={getContent}
         fields={["spaceID", "token", "handle"]}
       ></Layout>
