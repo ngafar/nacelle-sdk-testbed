@@ -2,7 +2,7 @@ import NacelleClient from "@nacelle/client-js-sdk";
 import createCompatibilityConnector from "@nacelle/compatibility-connector";
 import Layout from "../../components/Layout";
 
-function AllPages() {
+function Pages() {
   async function getContent(inputs) {
     const compatibilityConnector = new createCompatibilityConnector({
       endpoint: `https://storefront.api.nacelle.com/graphql/v1/spaces/${inputs.spaceID}`,
@@ -33,4 +33,4 @@ function AllPages() {
   );
 }
 
-export default AllPages;
+export default Pages;

@@ -2,7 +2,7 @@ import NacelleClient from "@nacelle/client-js-sdk";
 import createCompatibilityConnector from "@nacelle/compatibility-connector";
 import Layout from "../../components/Layout";
 
-function BlogByHandle() {
+function Product() {
   async function getContent(inputs) {
     const compatibilityConnector = new createCompatibilityConnector({
       endpoint: `https://storefront.api.nacelle.com/graphql/v1/spaces/${inputs.spaceID}`,
@@ -14,7 +14,7 @@ function BlogByHandle() {
       connector: compatibilityConnector,
     });
 
-    const content = await client.data.blog({
+    const content = await client.data.product({
       handle: inputs.handle,
     });
 
@@ -25,7 +25,7 @@ function BlogByHandle() {
   return (
     <>
       <Layout
-        title="[CC] Get Content by Handle"
+        title="[CC] Get Product by Handle"
         requestFunc={getContent}
         fields={["spaceID", "token", "handle"]}
       ></Layout>
@@ -33,4 +33,4 @@ function BlogByHandle() {
   );
 }
 
-export default BlogByHandle;
+export default Product;

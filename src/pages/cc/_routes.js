@@ -1,22 +1,21 @@
-import AllArticles from './AllArticles';
-import AllContent from './AllContent';
-import AllPages from './AllPages';
-import ArticleByHandle from "./ArticleByHandle";
-import BlogByHandle from './BlogByHandle';
-import ContentByHandle from "./ContentByHandle";
-import PageByHandle from './PageByHandle';
-import ProductByHandle from './ProductByHandle';
+import AllContent from "./AllContent";
+import Article from "./Article";
+import Articles from "./Articles";
+import Blog from "./Blog";
+import Content from "./Content";
+import Page from "./Page";
+import Pages from "./Pages";
+import Product from "./Product";
 
 const cc_routes_group = [
-    {path: '/cc/all-articles', component: AllArticles, name: ".articles"},
-    {path: '/cc/all-content', component: AllContent, name: ".allContent"},
-    {path: '/cc/all-pages', component: AllPages, name: ".pages"},
+  { path: "/cc/all-content", component: AllContent, name: "allContent" },
+  { path: "/cc/article", component: Article, name: "article" },
+  { path: "/cc/articles", component: Articles, name: "articles" },
+  { path: "/cc/blog", component: Blog, name: "blog" },
+  { path: "/cc/content", component: Content, name: "content" },
+  { path: "/cc/page", component: Page, name: "page" },
+  { path: "/cc/pages", component: Pages, name: "pages" },
+  { path: "/cc/product", component: Product, name: "product" },
+];
 
-    {path: '/cc/article-by-handle', component: ArticleByHandle, name: ".article"},
-    {path: '/cc/blog-by-handle', component: BlogByHandle, name: ".blog"},
-    {path: '/cc/content-by-handle', component: ContentByHandle, name: ".content"},
-    {path: '/cc/page-by-handle', component: PageByHandle, name: ".page"},
-    {path: '/cc/product-by-handle', component: ProductByHandle, name: ".product"},
-]
-
-export default cc_routes_group
+export default cc_routes_group;
