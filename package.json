@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@nacelle/client-js-sdk": "^3.7.1",
     "@nacelle/compatibility-connector": "^1.4.0",
     "@nacelle/storefront-sdk": "^1.7.7",
     "@testing-library/jest-dom": "^5.16.5",
