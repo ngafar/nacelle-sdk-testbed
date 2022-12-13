@@ -3,6 +3,7 @@ import Article from "./Article";
 import Articles from "./Articles";
 import Blog from "./Blog";
 import BlogPage from "./BlogPage";
+import Collection from "./Collection"
 import Content from "./Content";
 import Page from "./Page";
 import Pages from "./Pages";
@@ -14,6 +15,7 @@ const cc_routes_group = [
   { path: "/cc/articles", component: Articles, name: "articles" },
   { path: "/cc/blog", component: Blog, name: "blog" },
   { path: "/cc/blog-page", component: BlogPage, name: "blogPage" },
+  { path: "/cc/collection", component: Collection, name: "collection" },
   { path: "/cc/content", component: Content, name: "content" },
   { path: "/cc/page", component: Page, name: "page" },
   { path: "/cc/pages", component: Pages, name: "pages" },
