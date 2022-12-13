@@ -1,3 +1,4 @@
+import AllCollections from "./AllCollections";
 import AllContent from "./AllContent";
 import Article from "./Article";
 import Articles from "./Articles";
@@ -10,6 +11,7 @@ import Pages from "./Pages";
 import Product from "./Product";
 
 const cc_routes_group = [
+  { path: "/cc/all-collections", component: AllCollections, name: "allCollections" },
   { path: "/cc/all-content", component: AllContent, name: "allContent" },
   { path: "/cc/article", component: Article, name: "article" },
   { path: "/cc/articles", component: Articles, name: "articles" },
